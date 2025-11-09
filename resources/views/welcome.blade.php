@@ -35,7 +35,7 @@
                     <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Promos" class="font-bold text-xl hover:text-amber-300">Promos</a>
                     <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Nosotros" class="font-bold text-xl hover:text-amber-300">Nosotros</a>
                     <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Contactanos" class="font-bold text-xl hover:text-amber-300">Menu</a>
-                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Menu" class="font-bold text-xl hover:text-amber-300">Contactanos</a>
+                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Menu" class="font-bold text-xl hover:text-amber-300">Vistanos</a>
                 </nav>
             </div>
         </div>
@@ -126,8 +126,7 @@
         </div>
     </section>
     <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen"></section>
-    <section id="Menu" style="background-image:url('{{ asset('images/Menu.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
-        <img src="{{ asset('images/Phone.png') }}" class="w-[500px] h-auto">
+    <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
     </section>
     <footer class="bg-black text-white py-10 px-6 md:px-16">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 " data-aos="fade-right">
@@ -139,7 +138,7 @@
 
             <!-- Información -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm w-full md:w-2/3">
-            
+
             <!-- Columna 1 -->
             <div>
                 <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Fascinate', system-ui;font-weight: 400;font-style: normal;">Dirección</h3>
