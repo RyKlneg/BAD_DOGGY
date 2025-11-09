@@ -6,6 +6,9 @@
     @vite('resources/css/app.css')
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+        .romboide {
+        clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   </head>
@@ -125,7 +128,58 @@
             </div>
         </div>
     </section>
-    <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen"></section>
+    <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
+        <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-top">
+        <div class="flex justify-center mb-14">
+            <img src="{{ asset('images/NMenu.png') }}"
+                alt="Menú BAD-DOGGY"
+                class="w-[300px] sm:w-96 md:w-[300px] hover:scale-105 transition-transform duration-500 ease-in-out">
+        </div>
+        <!-- Contenedor de cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center" data-aos="fade-top">
+        <!-- Card Hamburguesa -->
+        <div class="relative group w-96 h-[450px] overflow-hidden">
+            <!-- Imagen principal -->
+            <div class="romboide overflow-hidden border-2 border-yellow-500 shadow-2xl bg-white/10 backdrop-blur-md">
+                <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}"
+                    alt="Hamburguesa"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+            </div>
+            <!-- Frase romboide -->
+            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+                <div class="romboide absolute right-[-100%] bg-yellow-400 text-black font-semibold italic px-6 py-8 w-96 h-[450px] flex items-center justify-center text-center shadow-2xl transition-all duration-700 ease-in-out group-hover:right-0">
+                    <p class="text-lg">“La felicidad está entre dos panes.”</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card Hot Dog -->
+        <div class="relative group w-96 h-[450px] overflow-hidden">
+            <div class="romboide overflow-hidden border-2 border-yellow-500 shadow-2xl bg-white/10 backdrop-blur-md">
+                <img src="{{ asset('images/Hotdog.jpg') }}"
+                    alt="Hot Dog"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+                <div class="romboide absolute right-[-100%] bg-yellow-400 text-black font-semibold italic px-6 py-8 w-96 h-[450px] flex items-center justify-center text-center shadow-2xl transition-all duration-700 ease-in-out group-hover:right-0">
+                    <p class="text-lg">“Un hot dog al día, alegra la vida.”</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card Alitas -->
+        <div class="relative group w-96 h-[450px] overflow-hidden">
+            <div class="romboide overflow-hidden border-2 border-yellow-500 shadow-2xl bg-white/10 backdrop-blur-md">
+                <img src="{{ asset('images/boneless.jpg') }}"
+                alt="Alitas"
+                class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+                <div class="romboide absolute right-[-100%] bg-yellow-400 text-black font-semibold italic px-6 py-8 w-96 h-[450px] flex items-center justify-center text-center shadow-2xl transition-all duration-700 ease-in-out group-hover:right-0">
+                    <p class="text-lg">“Las alitas son la respuesta, no importa la pregunta.”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
     <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
     </section>
     <footer class="bg-black text-white py-10 px-6 md:px-16">
