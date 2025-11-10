@@ -6,8 +6,16 @@
     @vite('resources/css/app.css')
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
-        .romboide {
-        clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 25s linear infinite;
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -35,10 +43,10 @@
                     </button>
                 </div>
                 <nav :class="{'flex':open,'hidden': !open}" class="flex-col flex-grow gap-8 hidden pb-4 md:flex md:flex-row lg:ml-auto justify-end">
-                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Promos" class="font-bold text-xl hover:text-amber-300">Promos</a>
-                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Nosotros" class="font-bold text-xl hover:text-amber-300">Nosotros</a>
-                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Contactanos" class="font-bold text-xl hover:text-amber-300">Menu</a>
-                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Menu" class="font-bold text-xl hover:text-amber-300">Vistanos</a>
+                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Promos" class="font-bold text-xl hover:text-amber-300" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Promos</a>
+                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Nosotros" class="font-bold text-xl hover:text-amber-300" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Nosotros</a>
+                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Contactanos" class="font-bold text-xl hover:text-amber-300" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Menu</a>
+                    <a :class="{'text-white': atTop, 'text-amber-300':!atTop}" href="#Menu" class="font-bold text-xl hover:text-amber-300" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Vistanos</a>
                 </nav>
             </div>
         </div>
@@ -115,11 +123,11 @@
             </div>
             <!-- Card de Nosotros -->
             <div class="w-full md:w-1/2 mt-6 md:mt-0 md:ml-8 bg-white bg-opacity-40 p-6 rounded-lg shadow-lg border-4 border-black border-dashed " data-aos="fade-left">
-                <h2 class="text-6xl text-center font-bold text-black mb-4" style="font-family: 'Fascinate', system-ui;font-weight: 400;font-style: normal;">Nuestra Manada</h2>
-                <p class="text-black text-2xl text-justify">
+                <h2 class="text-6xl text-center font-bold text-black mb-4" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Nuestra Manada</h2>
+                <p class="text-black text-2xl text-justify"  style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
                     Dicen que portarse mal no está bien... pero en
                     <span class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-amber-500">
-                        <span class="relative text-white dark:text-black">Bad Doggy</span>
+                        <span class="relative text-white dark:text-black" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Bad Doggy</span>
                     </span>, ¡es delicioso!
                     Somos fanáticos del sabor extremo y de romper la rutina con cada mordida.
                     Aquí todo se trata de amigos, risas y comida que no se olvida.
@@ -129,56 +137,40 @@
         </div>
     </section>
     <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
-        <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-top">
-        <div class="flex justify-center mb-14">
-            <img src="{{ asset('images/NMenu.png') }}"
-                alt="Menú BAD-DOGGY"
-                class="w-[300px] sm:w-96 md:w-[300px] hover:scale-105 transition-transform duration-500 ease-in-out">
+        <div class="pt-16 text-center" data-aos="fade-top">
+            <h2 class="text-5xl md:text-6xl text-white drop-shadow-lg" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">
+                Nuestro Menú
+            </h2>
         </div>
-        <!-- Contenedor de cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center" data-aos="fade-top">
-        <!-- Card Hamburguesa -->
-        <div class="relative group w-96 h-[450px] overflow-hidden">
-            <!-- Imagen principal -->
-            <div class="romboide overflow-hidden border-2 border-yellow-500 shadow-2xl bg-white/10 backdrop-blur-md">
-                <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}"
-                    alt="Hamburguesa"
-                    class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-            </div>
-            <!-- Frase romboide -->
-            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
-                <div class="romboide absolute right-[-100%] bg-yellow-400 text-black font-semibold italic px-6 py-8 w-96 h-[450px] flex items-center justify-center text-center shadow-2xl transition-all duration-700 ease-in-out group-hover:right-0">
-                    <p class="text-lg">“La felicidad está entre dos panes.”</p>
-                </div>
-            </div>
-        </div>
-        <!-- Card Hot Dog -->
-        <div class="relative group w-96 h-[450px] overflow-hidden">
-            <div class="romboide overflow-hidden border-2 border-yellow-500 shadow-2xl bg-white/10 backdrop-blur-md">
-                <img src="{{ asset('images/Hotdog.jpg') }}"
-                    alt="Hot Dog"
-                    class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
-                <div class="romboide absolute right-[-100%] bg-yellow-400 text-black font-semibold italic px-6 py-8 w-96 h-[450px] flex items-center justify-center text-center shadow-2xl transition-all duration-700 ease-in-out group-hover:right-0">
-                    <p class="text-lg">“Un hot dog al día, alegra la vida.”</p>
-                </div>
+        <!-- Carrusel infinito -->
+        <div class="w-full overflow-hidden mt-10 pt-16" data-aos="fade-top">
+            <div class="flex animate-scroll gap-10 px-10">
+                <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}" alt="Hamburguesa"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <img src="{{ asset('images/Hotdog.jpg') }}" alt="Hotdog"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <img src="{{ asset('images/Papas_Freggy.jpg') }}" alt="Papas"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <img src="{{ asset('images/boneless.jpg') }}" alt="Boneless"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <!-- Duplicadas para el efecto infinito -->
+                <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}" alt="Hamburguesa"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                <img src="{{ asset('images/Hotdog.jpg') }}" alt="Hotdog"
+                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
             </div>
         </div>
-        <!-- Card Alitas -->
-        <div class="relative group w-96 h-[450px] overflow-hidden">
-            <div class="romboide overflow-hidden border-2 border-yellow-500 shadow-2xl bg-white/10 backdrop-blur-md">
-                <img src="{{ asset('images/boneless.jpg') }}"
-                alt="Alitas"
-                class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-            </div>
-            <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
-                <div class="romboide absolute right-[-100%] bg-yellow-400 text-black font-semibold italic px-6 py-8 w-96 h-[450px] flex items-center justify-center text-center shadow-2xl transition-all duration-700 ease-in-out group-hover:right-0">
-                    <p class="text-lg">“Las alitas son la respuesta, no importa la pregunta.”</p>
-                </div>
-            </div>
+        <!-- Botón -->
+        <div class="pt-24 text-center" data-aos="fade-left">
+            <a href="#ordenar"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-10 rounded-full text-xl shadow-lg transition"  style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
+                    ¡Ordena Ya!
+            </a>
         </div>
-    </div>
     </section>
     <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
     </section>
@@ -187,7 +179,7 @@
             <!-- Logo -->
             <div class="flex flex-col items-center md:items-start w-full md:w-1/3">
             <img src="{{ asset('images/Logo_BAD_DOGGY.jpg') }}" alt="Logo Bad Doggy" class="w-40 h-auto mb-4 rounded-full shadow-lg rounded-4xl">
-            <p class="text-gray-400 text-sm text-center md:text-left">© 2025 Bad Doggy. Todos los derechos reservados.</p>
+            <p class="text-gray-400 text-sm text-center md:text-left" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">© 2025 Bad Doggy. Todos los derechos reservados.</p>
             </div>
 
             <!-- Información -->
@@ -195,26 +187,26 @@
 
             <!-- Columna 1 -->
             <div>
-                <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Fascinate', system-ui;font-weight: 400;font-style: normal;">Dirección</h3>
-                <p class="text-gray-300 mb-3">
+                <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Dirección</h3>
+                <p class="text-gray-300 mb-3" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
                 Blvd. Bicentenario #1711<br>
                 Frente a la nave 3 del parque Tabasco<br>
                 A un costado de Go Restaurante<br>
                 Villahermosa, México, 86287
                 </p>
 
-                <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Fascinate', system-ui;font-weight: 400;font-style: normal;">Área de servicio</h3>
-                <p class="text-gray-300">Villahermosa, México</p>
+                <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Área de servicio</h3>
+                <p class="text-gray-300" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Villahermosa, México</p>
             </div>
 
             <!-- Columna 2 -->
             <div>
-                <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Fascinate', system-ui;font-weight: 400;font-style: normal;">Contacto</h3>
-                <p class="text-gray-300 mb-2"><span class="font-semibold">Celular:</span> 993 176 6107</p>
-                <p class="text-gray-300 mb-2"><span class="font-semibold">WhatsApp:</span> +52 1 993 259 2783</p>
-                <p class="text-gray-300 mb-2"><span class="font-semibold">Correo:</span> bad-doggyoficial@hotmail.com</p>
+                <h3 class="text-lg font-semibold mb-2 text-amber-500" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Contacto</h3>
+                <p class="text-gray-300 mb-2" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;"><span class="font-semibold" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Celular:</span> 993 176 6107</p>
+                <p class="text-gray-300 mb-2" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;"><span class="font-semibold" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">WhatsApp:</span> +52 1 993 259 2783</p>
+                <p class="text-gray-300 mb-2" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;"><span class="font-semibold" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Correo:</span> bad-doggyoficial@hotmail.com</p>
 
-                <h3 class="text-lg font-semibold mt-4 mb-2 text-amber-500" style="font-family: 'Fascinate', system-ui;font-weight: 400;font-style: normal;">Redes Sociales</h3>
+                <h3 class="text-lg font-semibold mt-4 mb-2 text-amber-500" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Redes Sociales</h3>
                 <div class="flex space-x-4 mt-2">
                 <!-- WhatsApp -->
                 <a href="https://wa.me/c/5219931766107" target="_blank" aria-label="WhatsApp" class="hover:text-amber-400 transition">
