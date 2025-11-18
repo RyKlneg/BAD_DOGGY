@@ -141,9 +141,10 @@
             <h2 class="text-5xl md:text-6xl text-white drop-shadow-lg" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">
                 Nuestro Menú
             </h2>
+            <p class="text-white text-2xl pt-10" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Esto no es comida… es pura maldad deliciosa.</p>
         </div>
         <!-- Carrusel infinito -->
-        <div class="w-full overflow-hidden mt-10 pt-16" data-aos="fade-top">
+        <div class="w-full overflow-hidden mt-10 pt-10" data-aos="fade-top">
             <div class="flex animate-scroll gap-10 px-10">
                 <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
                     class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
@@ -166,7 +167,7 @@
         </div>
         <!-- Botón -->
         <div class="pt-24 text-center" data-aos="fade-left">
-            <a href="#ordenar"
+            <a href="{{ route('order') }}"
                 class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-10 rounded-full text-xl shadow-lg transition"  style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
                     ¡Ordena Ya!
             </a>
