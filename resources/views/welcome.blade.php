@@ -82,7 +82,7 @@
         <!-- Contenedor de ambas imágenes -->
         <div
             class="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
-            :style="`transform: translateX(${translateX}%);`"
+            :style="`transform: translateX(${translateX}%);`" data-aos="fade-top"
         >
             <!-- Imagen actual -->
             <div
