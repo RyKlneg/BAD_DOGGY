@@ -167,7 +167,7 @@
         </div>
         <!-- Botón -->
         <div class="pt-24 text-center" data-aos="fade-left">
-            <a href="{{ route('order') }}"
+            <a href="{{ route('pruebas') }}"
                 class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-10 rounded-full text-xl shadow-lg transition"  style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
                     ¡Ordena Ya!
             </a>
