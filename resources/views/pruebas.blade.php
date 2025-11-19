@@ -128,6 +128,7 @@
             const formData = new FormData(event.target);
             const customerName = formData.get('customer_name');
             const customerPhone = formData.get('customer_phone');
+            const customerNotes = formData.get('customer_notes');
             
             if (selectedProducts.length === 0) {
                 alert('Por favor selecciona al menos un producto');
@@ -135,16 +136,21 @@
             }
             
             const orderData = {
-                order_number: generateOrderNumber(),
                 customer_name: customerName,
                 customer_phone: customerPhone,
+                customer_notes: customerNotes,
                 total_amount: totalAmount,
-                products: selectedProducts,
-                status: 'pending'
+                products: selectedProducts
             };
             
             try {
-                const response = await fetch('/orders', {
+                // Mostrar loading
+                const submitBtn = event.target.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Procesando...';
+                submitBtn.disabled = true;
+                
+                const response = await fetch('{{ route("orders.store") }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -153,23 +159,63 @@
                     body: JSON.stringify(orderData)
                 });
                 
-                if (response.ok) {
-                    const result = await response.json();
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
                     showOrderConfirmation(result.order_number);
                     resetOrder();
                 } else {
-                    alert('Error al procesar el pedido');
+                    alert(result.message || 'Error al procesar el pedido');
                 }
+                
             } catch (error) {
                 console.error('Error:', error);
-                alert('Error al procesar el pedido');
+                alert('Error de conexión. Por favor intenta nuevamente.');
+            } finally {
+                // Restaurar botón
+                if (submitBtn) {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
             }
         }
 
         function showOrderConfirmation(orderNumber) {
-            alert(`¡Pedido realizado con éxito!\nTu número de pedido es: ${orderNumber}\nGuarda este número para recoger tu pedido.`);
+            // Crear un modal más elegante
+            const modal = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div class="bg-white rounded-2xl p-8 max-w-md mx-4">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">¡Pedido Confirmado!</h3>
+                            <p class="text-gray-600 mb-4">Tu pedido ha sido procesado exitosamente</p>
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                                <p class="text-sm text-gray-600">Tu número de pedido es:</p>
+                                <p class="text-xl font-bold text-red-600">${orderNumber}</p>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-6">Guarda este número para recoger tu pedido en nuestro local.</p>
+                            <button onclick="closeConfirmationModal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modal);
         }
 
+        function closeConfirmationModal() {
+            const modal = document.querySelector('.fixed.inset-0');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
         function resetOrder() {
             selectedProducts = [];
             totalAmount = 0;
