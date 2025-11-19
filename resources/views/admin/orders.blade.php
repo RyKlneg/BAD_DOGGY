@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administración - Bad Doggy</title>
+    <title>Ordenes de Bad Doggy</title>
     @vite('resources/css/app.css')
     <style>
         .status-pending { background-color: #fef3c7; color: #d97706; }
@@ -22,7 +22,7 @@
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
                     <img src="{{ asset('images/Logo_BAD_DOGGY.jpg') }}" alt="Logo" class="h-12 w-12 rounded-full">
-                    <h1 class="ml-3 text-2xl font-bold text-gray-900">Panel de Administración</h1>
+                    <h1 class="ml-3 text-2xl font-bold text-gray-900">Pedidos de Bad Doggy</h1>
                 </div>
                 <div class="flex items-center space-x-4">
                     <span class="text-sm text-gray-600">{{ now()->format('d/m/Y H:i') }}</span>

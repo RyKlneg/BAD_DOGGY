@@ -138,8 +138,8 @@
     </section>
     <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
         <div class="pt-16 text-center" data-aos="fade-top">
-            <h2 class="text-5xl md:text-6xl text-white drop-shadow-lg" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">
-                Nuestro Menú
+            <h2 class="text-5xl md:text-6xl text-amber-300 drop-shadow-lg" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">
+                ¿Listo para probar la maldad más deliciosa?
             </h2>
             <p class="text-white text-2xl pt-10" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Esto no es comida… es pura maldad deliciosa.</p>
         </div>
@@ -147,22 +147,22 @@
         <div class="w-full overflow-hidden mt-10 pt-10" data-aos="fade-top">
             <div class="flex animate-scroll gap-10 px-10">
                 <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}" alt="Hamburguesa"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <img src="{{ asset('images/Hotdog.jpg') }}" alt="Hotdog"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <img src="{{ asset('images/Papas_Freggy.jpg') }}" alt="Papas"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <img src="{{ asset('images/boneless.jpg') }}" alt="Boneless"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <!-- Duplicadas para el efecto infinito -->
                 <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}" alt="Hamburguesa"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
                 <img src="{{ asset('images/Hotdog.jpg') }}" alt="Hotdog"
-                    class="w-[800px] h-[550px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
             </div>
         </div>
         <!-- Botón -->
@@ -179,7 +179,7 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 " data-aos="fade-right">
             <!-- Logo -->
             <div class="flex flex-col items-center md:items-start w-full md:w-1/3">
-            <img src="{{ asset('images/Logo_BAD_DOGGY.jpg') }}" alt="Logo Bad Doggy" class="w-40 h-auto mb-4 rounded-full shadow-lg rounded-4xl">
+            <img src="{{ asset('images/Logo_BAD_DOGGY.jpg') }}" alt="Logo Bad Doggy" class="w-40 h-auto mb-4 rounded-full shadow-lg">
             <p class="text-gray-400 text-sm text-center md:text-left" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">© 2025 Bad Doggy. Todos los derechos reservados.</p>
             </div>
 

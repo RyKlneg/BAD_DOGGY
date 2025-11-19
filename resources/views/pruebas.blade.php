@@ -591,21 +591,21 @@
                     <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-4">
                         @csrf
                         <div>
-                            <label for="customer_name" class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo *</label>
+                            <label for="customer_name" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Lobster', sans-serif;">Nombre Completo</label>
                             <input type="text" id="customer_name" name="customer_name" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                                 placeholder="Ingresa tu nombre completo">
                         </div>
                         
                         <div>
-                            <label for="customer_phone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
+                            <label for="customer_phone" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Lobster', sans-serif;">Teléfono</label>
                             <input type="tel" id="customer_phone" name="customer_phone" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                                 placeholder="Ingresa tu teléfono">
                         </div>
                         
                         <div>
-                            <label for="customer_notes" class="block text-sm font-medium text-gray-700 mb-2">Notas Adicionales</label>
+                            <label for="customer_notes" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Lobster', sans-serif;">Notas Adicionales</label>
                             <textarea id="customer_notes" name="customer_notes" rows="3"
                                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
                                     placeholder="Alguna instrucción especial para tu pedido..."></textarea>
