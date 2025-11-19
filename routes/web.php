@@ -3,6 +3,7 @@
 use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,4 +21,8 @@ Route::get('/pruebas', function () {
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 
 // Ruta para ver pedidos (panel de administración)
-Route::get('/admin/orders', [OrderController::class, 'index'])->name('admin.orders');
+Route::prefix('admin')->group(function () {
+    Route::get('/orders', [AdminOrderController::class, 'index'])->name('admin.orders.index');
+    Route::get('/orders/{id}', [AdminOrderController::class, 'show'])->name('admin.orders.show');
+    Route::put('/orders/{id}/status', [AdminOrderController::class, 'updateStatus'])->name('admin.orders.update-status');
+});

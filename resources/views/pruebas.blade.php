@@ -140,9 +140,17 @@
                 customer_phone: customerPhone,
                 customer_notes: customerNotes,
                 total_amount: totalAmount,
-                products: selectedProducts
+                products: selectedProducts.map(product => ({
+                    id: product.id,
+                    name: product.name,
+                    price: parseFloat(product.price), // Asegurar que sea número
+                    quantity: parseInt(product.quantity), // Asegurar que sea número
+                    image: product.image
+                }))
             };
             
+            console.log('Datos del pedido:', orderData);
+
             try {
                 // Mostrar loading
                 const submitBtn = event.target.querySelector('button[type="submit"]');
@@ -150,7 +158,7 @@
                 submitBtn.textContent = 'Procesando...';
                 submitBtn.disabled = true;
                 
-                const response = await fetch('{{ route("orders.store") }}', {
+                const response = await fetch('/orders', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -160,12 +168,19 @@
                 });
                 
                 const result = await response.json();
+
+                console.log('Respuesta del servidor:', result);
                 
                 if (response.ok && result.success) {
                     showOrderConfirmation(result.order_number);
                     resetOrder();
                 } else {
-                    alert(result.message || 'Error al procesar el pedido');
+                    if (result.errors) {
+                        const errorMessages = Object.values(result.errors).flat().join('\n');
+                        alert('Errores en el formulario:\n' + errorMessages);
+                    } else {
+                        alert(result.message || 'Error al procesar el pedido');
+                    }
                 }
                 
             } catch (error) {
@@ -173,8 +188,9 @@
                 alert('Error de conexión. Por favor intenta nuevamente.');
             } finally {
                 // Restaurar botón
+                const submitBtn = event.target.querySelector('button[type="submit"]');
                 if (submitBtn) {
-                    submitBtn.textContent = originalText;
+                    submitBtn.textContent = 'Confirmar Pedido';
                     submitBtn.disabled = false;
                 }
             }

@@ -10,51 +10,41 @@ use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
     //
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        // Validación mínima para testing
         $validator = Validator::make($request->all(), [
-            'customer_name' => 'required|string|max:255',
-            'customer_phone' => 'required|string|max:20',
-            'customer_notes' => 'nullable|string|max:1000',
-            'total_amount' => 'required|numeric|min:0',
-            'products' => 'required|array|min:1',
-            'products.*.id' => 'required|integer',
-            'products.*.name' => 'required|string|max:255',
-            'products.*.price' => 'required|numeric|min:0',
-            'products.*.quantity' => 'required|integer|min:1',
-            'products.*.image' => 'nullable|string',
+            'customer_name' => 'required',
+            'customer_phone' => 'required',
+            'total_amount' => 'required|numeric',
+            'products' => 'required|array'
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
                 'message' => 'Error de validación',
-                'errors' => $validator->errors()
+                'errors' => $validator->errors(),
+                'received_data' => $request->all() // Para ver qué llega
             ], 422);
         }
 
-        try {
-            $order = Order::create([
-                'order_number' => Order::generateOrderNumber(),
-                'customer_name' => $request->customer_name,
-                'customer_phone' => $request->customer_phone,
-                'customer_notes' => $request->customer_notes,
-                'total_amount' => $request->total_amount,
-                'products' => $request->products,
-                'status' => 'pending',
-            ]);
+        // Crear pedido sin validación estricta
+        $order = Order::create([
+            'order_number' => 'BD' . time() . rand(1000, 9999),
+            'customer_name' => $request->customer_name,
+            'customer_phone' => $request->customer_phone,
+            'customer_notes' => $request->customer_notes,
+            'total_amount' => $request->total_amount,
+            'products' => $request->products,
+            'status' => 'pending'
+        ]);
 
-            return response()->json([
-                'success' => true,
-                'order_number' => $order->order_number,
-                'message' => 'Pedido creado exitosamente'], 201);
-        } catch (\Exception $e) {
-            Log::error('Error al crear pedido: ' . $e->getMessage());
-
-            return response()->json([
-                'success' => false,
-                'message' => 'Error interno del servidor al procesar el pedido'
-            ], 500);
-        }
+        return response()->json([
+            'success' => true,
+            'order_number' => $order->order_number,
+            'message' => 'Pedido creado exitosamente'
+        ]);
     }
 
     public function show($id){
