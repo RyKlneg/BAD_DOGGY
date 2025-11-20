@@ -136,44 +136,134 @@
             </div>
         </div>
     </section>
-    <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
-        <div class="pt-16 text-center" data-aos="fade-top">
+    <section id="Contactanos" style="background-image:url('{{ asset('images/Contactanos.png') }}')" class="bg-cover bg-center w-full bg-black min-h-screen flex flex-col justify-center py-12">
+        <div class="pt-16 text-center pb-12" data-aos="fade-top">
             <h2 class="text-5xl md:text-6xl text-amber-300 drop-shadow-lg" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">
                 ¿Listo para probar la maldad más deliciosa?
             </h2>
-            <p class="text-white text-2xl pt-10" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Esto no es comida… es pura maldad deliciosa.</p>
+            <p class="text-white text-2xl pt-10" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
+                Esto no es comida… es pura maldad deliciosa.
+            </p>
         </div>
-        <!-- Carrusel infinito -->
-        <div class="w-full overflow-hidden mt-10 pt-10" data-aos="fade-top">
-            <div class="flex animate-scroll gap-10 px-10">
-                <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}" alt="Hamburguesa"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <img src="{{ asset('images/Hotdog.jpg') }}" alt="Hotdog"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <img src="{{ asset('images/Papas_Freggy.jpg') }}" alt="Papas"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <img src="{{ asset('images/boneless.jpg') }}" alt="Boneless"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <!-- Duplicadas para el efecto infinito -->
-                <img src="{{ asset('images/HotDog_Fondo.jpg') }}" alt="Hot Dog"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <img src="{{ asset('images/Hamburguesa_Fondo.jpg') }}" alt="Hamburguesa"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
-                <img src="{{ asset('images/Hotdog.jpg') }}" alt="Hotdog"
-                    class="w-[600px] h-[350px] object-cover rounded-2xl shadow-xl filter grayscale hover:grayscale-0 transition duration-500 ease-in-out">
+
+        <!-- CARDS MÁS GRANDES CON HOVER AMARILLO -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto px-6">
+
+            <!-- Card 1 con imagen de hamburguesa -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 group hover:bg-amber-50 hover:border-4 hover:border-amber-300 border-4 border-transparent" data-aos="fade-left">
+                <div class="h-64 overflow-hidden">
+                    <img src="{{ asset('images/Entrega.jpg') }}" alt="Entrega Express"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-8 text-center group-hover:bg-amber-50 transition duration-300">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-4 group-hover:text-amber-700 transition duration-300" style="font-family: 'Lobster', sans-serif;">
+                        Entrega Express
+                    </h4>
+                    <p class="text-gray-600 text-lg leading-relaxed group-hover:text-gray-700 transition duration-300">
+                        En menos de 30 minutos tienes tu maldad favorita en la puerta de tu casa, caliente y lista para disfrutar.
+                    </p>
+                </div>
             </div>
+
+            <!-- Card 2 con imagen de hot dog -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 group hover:bg-amber-50 hover:border-4 hover:border-amber-300 border-4 border-transparent" data-aos="fade-left" data-aos-delay="100">
+                <div class="h-64 overflow-hidden">
+                    <img src="{{ asset('images/Ingredientes.jpg') }}" alt="Ingredientes Premium"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-8 text-center group-hover:bg-amber-50 transition duration-300">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-4 group-hover:text-amber-700 transition duration-300" style="font-family: 'Lobster', sans-serif;">
+                        Ingredientes Top
+                    </h4>
+                    <p class="text-gray-600 text-lg leading-relaxed group-hover:text-gray-700 transition duration-300">
+                        Calidad premium en cada ingrediente para una experiencia única que tu paladar notará al instante.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 con imagen de boneless -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 group hover:bg-amber-50 hover:border-4 hover:border-amber-300 border-4 border-transparent" data-aos="fade-left" data-aos-delay="200">
+                <div class="h-64 overflow-hidden">
+                    <img src="{{ asset('images/Pasion.jpg') }}" alt="Hecho con Amor"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-8 text-center group-hover:bg-amber-50 transition duration-300">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-4 group-hover:text-amber-700 transition duration-300" style="font-family: 'Lobster', sans-serif;">
+                        Hecho con Pasión
+                    </h4>
+                    <p class="text-gray-600 text-lg leading-relaxed group-hover:text-gray-700 transition duration-300">
+                        Cada plato preparado con dedicación y nuestro toque especial que hace la diferencia.
+                    </p>
+                </div>
+            </div>
+
         </div>
+
         <!-- Botón -->
-        <div class="pt-24 text-center" data-aos="fade-left">
+        <div class="pt-20 text-center" data-aos="fade-left">
             <a href="{{ route('pruebas') }}"
-                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-10 rounded-full text-xl shadow-lg transition"  style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
-                    ¡Ordena Ya!
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-5 px-16 rounded-full text-2xl shadow-2xl transition-all transform hover:scale-110 hover:shadow-2xl duration-300"
+                style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
+                ¡Ordena Ya!
             </a>
         </div>
     </section>
     <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+            <!-- Columna izquierda: Mapa de Google Maps -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-right">
+                <div class="h-10 lg:h-full">
+                    <!-- Mapa de Google Maps interactivo -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.382539725615!2d-92.9717177240151!3d18.00744198464536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd7680962b383%3A0xc4a8086e0f241a22!2sBad_doggy!5e0!3m2!1ses!2smx!4v1763669563602!5m2!1ses!2smx" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Columna derecha: Información de contacto -->
+            <div class="text-white" data-aos="fade-left">
+                <h2 class="text-5xl md:text-6xl text-amber-300 mb-6 text-center lg:text-left" style="font-family: 'Permanent Marker', cursive;">
+                    ¡Visítanos!
+                </h2>
+                <p class="text-2xl text-black mb-8 text-center lg:text-left" style="font-family: 'Lobster', sans-serif;">
+                    Donde la maldad se vuelve deliciosa
+                </p>
+
+                <!-- Información de ubicación -->
+                <div class="bg-black bg-opacity-10 rounded-2xl p-6 mb-6 backdrop-blur-sm">
+                    <div class="flex items-start mb-4">
+                        <div>
+                            <h3 class="text-xl text-amber-300 mb-2" style="font-family: 'Lobster', sans-serif;">Dirección</h3>
+                            <p class="text-lg">Blvd. Bicentenario #1711</p>
+                            <p class="text-lg">Frente a la nave 3 del parque Tabasco</p>
+                            <p class="text-lg">A un costado de Go Restaurante</p>
+                            <p class="text-lg font-semibold text-amber-200">Villahermosa, México, 86287</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de servicio -->
+                <div class="bg-black bg-opacity-10 rounded-2xl p-6 mb-6 backdrop-blur-sm">
+                    <div class="flex items-start">
+                        <div>
+                            <h3 class="text-xl text-amber-300 mb-2" style="font-family: 'Lobster', sans-serif;">Área de Servicio</h3>
+                            <p class="text-lg">Villahermosa, México</p>
+                            <p class="text-sm text-gray-300 mt-1">Delivery disponible en toda el área</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Horarios en la parte inferior -->
+        <div class="mt-8 text-center" data-aos="fade-up">
+            <div class="bg-amber-500 text-gray-900 rounded-2xl p-6 inline-block">
+                <h4 class="text-2xl font-bold mb-2" style="font-family: 'Lobster', sans-serif;">Horarios de Atención</h4>
+                <p class="text-lg font-semibold">Lunes a Domingo: 11:00 AM - 10:00 PM</p>
+            </div>
+        </div>
+    </div>
     </section>
     <footer class="bg-black text-white py-10 px-6 md:px-16">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 " data-aos="fade-right">

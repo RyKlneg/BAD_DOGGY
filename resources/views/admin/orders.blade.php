@@ -99,7 +99,7 @@
             <div class="px-6 py-4 border-b border-gray-200">
                 <h2 class="text-lg font-semibold text-gray-900">Pedidos Recientes</h2>
             </div>
-            
+
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
@@ -168,7 +168,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex space-x-2">
-                                    <button onclick="showOrderDetails({{ $order->id }})" 
+                                    <button onclick="showOrderDetails({{ $order->id }})"
                                             class="text-blue-600 hover:text-blue-900 text-xs">
                                         Ver
                                     </button>
