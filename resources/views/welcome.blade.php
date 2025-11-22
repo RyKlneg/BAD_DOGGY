@@ -210,7 +210,6 @@
     <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen ">
         <div class="max-w-7xl mx-auto">
         <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-26" data-aos="fade-top">
-            <!-- Lado izquierdo - Imagen -->
             <div class="w-full lg:w-1/2">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                     <img
@@ -222,15 +221,11 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-transparent"></div>
                 </div>
             </div>
-
-            <!-- Lado derecho - Contenido -->
             <div class="w-full lg:w-1/2 text-black">
                 <!-- Título principal -->
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight" >
-                    <span class="text-3xl sm:text-4xl lg:text-5xl" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Donde los buenos perros<br>se portan <span class="text-amber-400">"MAL"</span></span>
+                    <span class="text-3xl sm:text-4xl lg:text-5xl" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">DONDE LOS BUENOS PERROS <br>SE PORTAN <span class="text-amber-400">"MAL"</span></span>
                 </h1>
-
-                <!-- Información carismática -->
                 <div class="space-y-4 mb-8">
                     <p class="text-xl sm:text-2xl text-black leading-relaxed text-justify">
                         <strong class="text-amber-400" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Hecho con amor, devorado con pasión</strong>
@@ -242,25 +237,19 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                         <div class="flex items-center gap-3">
-                            <span class="text-amber-400 text-2xl">🥩</span>
-                            <span class="text-gray-200">Ingredientes premium</span>
+                            <span class="text-black" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Sabor que manda mordida tras mordida</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <span class="text-amber-400 text-2xl">👨‍🍳</span>
-                            <span class="text-gray-200">Elaboración artesanal</span>
+                            <span class="text-black" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Salsas artesanales que enamoran</span>
+                        </div>
+                        <div class="flex items-center gap-3"
+                            <span class="text-black" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">El estilo callejero más sabroso de la ciudad</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <span class="text-amber-400 text-2xl">❤️</span>
-                            <span class="text-gray-200">Hecho con amor</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-amber-400 text-2xl">🚫</span>
-                            <span class="text-gray-200">Sin conservantes</span>
+                            <span class="text-black" style="font-family: 'Permanent Marker', cursive; font-weight: 400; font-style: normal;">Hamburguesas que causan antojo inmediato</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Llamada a la acción -->
                 <div class="flex flex-col sm:flex-row gap-4 mt-8">
                     <button class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
                         Descubre Nuestros Sabores
@@ -272,8 +261,6 @@
             </div>
         </div>
     </div>
-    </section>
-    <section style="background-image:url('{{ asset('images/Menu.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
     </section>
     <footer class="bg-black text-white py-10 px-6 md:px-16">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 " data-aos="fade-right">
