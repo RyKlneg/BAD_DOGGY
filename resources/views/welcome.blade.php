@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="scroll-smooth">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
@@ -19,8 +19,8 @@
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -55,7 +55,7 @@
         id="Promos"
         x-data="{
             images: [
-            '{{ asset('images/Banner.png') }}',
+            '{{ asset('images/Banner.jpg') }}',
             '{{ asset('images/Banner2.png') }}',
             '{{ asset('images/Banner3.png') }}'
             ],
@@ -198,7 +198,6 @@
             </div>
 
         </div>
-
         <!-- Botón -->
         <div class="pt-20 text-center" data-aos="fade-left">
             <a href="{{ route('pruebas') }}"
@@ -208,62 +207,73 @@
             </a>
         </div>
     </section>
-    <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-
-            <!-- Columna izquierda: Mapa de Google Maps -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-right">
-                <div class="h-10 lg:h-full">
-                    <!-- Mapa de Google Maps interactivo -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.382539725615!2d-92.9717177240151!3d18.00744198464536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd7680962b383%3A0xc4a8086e0f241a22!2sBad_doggy!5e0!3m2!1ses!2smx!4v1763669563602!5m2!1ses!2smx" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section id="Menu" style="background-image:url('{{ asset('images/Banner_Visitanos.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen ">
+        <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-26" data-aos="fade-top">
+            <!-- Lado izquierdo - Imagen -->
+            <div class="w-full lg:w-1/2">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <img
+                        src="{{ asset('images/Visitanos.jpg') }}"
+                        alt="Productos artesanales Bad Doggy - Delicias para tu mascota"
+                        class="w-full h-auto object-cover"
+                    />
+                    <!-- Efecto decorativo -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-transparent"></div>
                 </div>
             </div>
 
-            <!-- Columna derecha: Información de contacto -->
-            <div class="text-white" data-aos="fade-left">
-                <h2 class="text-5xl md:text-6xl text-amber-300 mb-6 text-center lg:text-left" style="font-family: 'Permanent Marker', cursive;">
-                    ¡Visítanos!
-                </h2>
-                <p class="text-2xl text-black mb-8 text-center lg:text-left" style="font-family: 'Lobster', sans-serif;">
-                    Donde la maldad se vuelve deliciosa
-                </p>
+            <!-- Lado derecho - Contenido -->
+            <div class="w-full lg:w-1/2 text-black">
+                <!-- Título principal -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight" >
+                    <span class="text-3xl sm:text-4xl lg:text-5xl" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Donde los buenos perros<br>se portan <span class="text-amber-400">"MAL"</span></span>
+                </h1>
 
-                <!-- Información de ubicación -->
-                <div class="bg-black bg-opacity-10 rounded-2xl p-6 mb-6 backdrop-blur-sm">
-                    <div class="flex items-start mb-4">
-                        <div>
-                            <h3 class="text-xl text-amber-300 mb-2" style="font-family: 'Lobster', sans-serif;">Dirección</h3>
-                            <p class="text-lg">Blvd. Bicentenario #1711</p>
-                            <p class="text-lg">Frente a la nave 3 del parque Tabasco</p>
-                            <p class="text-lg">A un costado de Go Restaurante</p>
-                            <p class="text-lg font-semibold text-amber-200">Villahermosa, México, 86287</p>
+                <!-- Información carismática -->
+                <div class="space-y-4 mb-8">
+                    <p class="text-xl sm:text-2xl text-black leading-relaxed text-justify">
+                        <strong class="text-amber-400" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">Hecho con amor, devorado con pasión</strong>
+                    </p>
+
+                    <p class="text-lg text-black" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
+                        En Bad Doggy no seguimos recetas, seguimos <strong>corazonazos</strong>. Cada snack, cada galleta, cada delicia que creamos está hecha con ingredientes 100% naturales, cero conservantes y todo el cariño que tu compañero peludo merece.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-400 text-2xl">🥩</span>
+                            <span class="text-gray-200">Ingredientes premium</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-400 text-2xl">👨‍🍳</span>
+                            <span class="text-gray-200">Elaboración artesanal</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-400 text-2xl">❤️</span>
+                            <span class="text-gray-200">Hecho con amor</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-400 text-2xl">🚫</span>
+                            <span class="text-gray-200">Sin conservantes</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Área de servicio -->
-                <div class="bg-black bg-opacity-10 rounded-2xl p-6 mb-6 backdrop-blur-sm">
-                    <div class="flex items-start">
-                        <div>
-                            <h3 class="text-xl text-amber-300 mb-2" style="font-family: 'Lobster', sans-serif;">Área de Servicio</h3>
-                            <p class="text-lg">Villahermosa, México</p>
-                            <p class="text-sm text-gray-300 mt-1">Delivery disponible en toda el área</p>
-                        </div>
-                    </div>
+                <!-- Llamada a la acción -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <button class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
+                        Descubre Nuestros Sabores
+                    </button>
+                    <button class="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black font-bold py-3 px-8 rounded-full transition-all duration-300" style="font-family: 'Lobster', sans-serif; font-weight: 400; font-style: normal;">
+                        Visita Nuestra Tienda
+                    </button>
                 </div>
-            </div>
-        </div>
-        <!-- Horarios en la parte inferior -->
-        <div class="mt-8 text-center" data-aos="fade-up">
-            <div class="bg-amber-500 text-gray-900 rounded-2xl p-6 inline-block">
-                <h4 class="text-2xl font-bold mb-2" style="font-family: 'Lobster', sans-serif;">Horarios de Atención</h4>
-                <p class="text-lg font-semibold">Lunes a Domingo: 11:00 AM - 10:00 PM</p>
             </div>
         </div>
     </div>
+    </section>
+    <section style="background-image:url('{{ asset('images/Menu.png') }}')" class="bg-cover bg-center w-full bg-black h-48 sm:h-64 md:h-96 lg:h-screen">
     </section>
     <footer class="bg-black text-white py-10 px-6 md:px-16">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 " data-aos="fade-right">
